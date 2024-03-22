@@ -3,7 +3,7 @@ import Button from "../Elements/Button/Button";
 
 const CardProduct = (props) => {
   const { children } = props;
-  return <div className="w-full max-w-sm mx-2 bg-gray-800 border border-gray-700 rounded-lg shadow">{children}</div>;
+  return <div className="flex flex-col justify-between w-full max-w-sm mx-2 bg-gray-800 border border-gray-700 rounded-lg shadow">{children}</div>;
 };
 
 const Header = (props) => {
@@ -15,11 +15,11 @@ const Header = (props) => {
   );
 };
 const Body = (props) => {
-  const { children, title } = props;
+  const { children, name } = props;
   return (
-    <div className="px-5 pb-5">
+    <div className="px-5 pb-5 h-full">
       <a href="#">
-        <h5 className="text-xl font-semibold tracking-tight text-white">{title}</h5>
+        <h5 className="text-xl font-semibold tracking-tight text-white">{name}</h5>
         <p className="text-sm text-white">{children}</p>
       </a>
     </div>
@@ -29,8 +29,8 @@ const Body = (props) => {
 const Footer = (props) => {
   const { price } = props;
   return (
-    <div className="flex items-center px-5 pb-5">
-      <span className="text-xl font-bold text-white mr-12">{price}</span>
+    <div className="flex items-center justify-between px-5 pb-5">
+      <span className="text-xl font-bold text-white">{price}</span>
       <Button className="bg-blue-600">Add to cart</Button>
     </div>
   );
@@ -50,7 +50,7 @@ Header.propTypes = {
 
 Body.propTypes = {
   children: PropTypes.node,
-  title: PropTypes.string,
+  name: PropTypes.string,
 };
 
 Footer.propTypes = {
