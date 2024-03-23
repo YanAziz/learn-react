@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const Button = (props) => {
-  const { children = "Register", classname = "bg-blue-700" } = props;
+  const { children, classname = "bg-blue-700" } = props;
   return (
     <button className={`h-10 px-6 font-semibold rounded-md text-white ${classname}`} type="submit">
       {children}
